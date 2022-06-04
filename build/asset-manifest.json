@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Artemides.github.io/React-Todo/static/css/main.25e30958.css",
+    "main.js": "/Artemides.github.io/React-Todo/static/js/main.a5e18b68.js",
+    "index.html": "/Artemides.github.io/React-Todo/index.html",
+    "main.25e30958.css.map": "/Artemides.github.io/React-Todo/static/css/main.25e30958.css.map",
+    "main.a5e18b68.js.map": "/Artemides.github.io/React-Todo/static/js/main.a5e18b68.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25e30958.css",
+    "static/js/main.a5e18b68.js"
+  ]
+}
