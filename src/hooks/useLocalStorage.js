@@ -19,9 +19,9 @@ export const useLocalStorage=(itemName, initialValue)=> {
         } catch (err) {
           setError(err);
         }
-      }, 5000);
+      }, 1500);
     },[]);
-  
+
     const saveItem = (newItem) => {
       try {
         localStorage.setItem(itemName, JSON.stringify(newItem));
@@ -32,4 +32,3 @@ export const useLocalStorage=(itemName, initialValue)=> {
     };
     return { item, saveItem, loading, error };
   }
-  
