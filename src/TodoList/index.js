@@ -10,7 +10,6 @@ export const TodoList = ({
   search,
   totalTodos,
   onNotFound,
-  render,
   children
 }) => {
   return (<section>
