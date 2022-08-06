@@ -1,7 +1,7 @@
 import React from "react";
 import "./TodoForm.css";
 export const TodoForm = ({ addTodo, setOpenModal }) => {
-  const [todo, setTodo] = React.useState({});
+  const [todo, setTodo] = React.useState("");
   const onCancel = () => {
     setOpenModal(false);
   };
