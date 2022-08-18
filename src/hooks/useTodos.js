@@ -10,6 +10,7 @@ export const useTodos = () => {
     saveItem: saveTodos,
     loading,
     error,
+    syncronize: syncronizeTodos
   } = useLocalStorage("todos_v1", []);
   const TodoTotal = todos.length;
   const TodosDone = todos.filter((todo) => !!todo.done).length;
@@ -42,12 +43,6 @@ export const useTodos = () => {
     newTodos.splice(index, 1);
     saveTodos(newTodos);
   };
-  console.log(" Antes del Efecto");
-  React.useEffect(() => {
-    console.log("efecto");
-  }, [TodoTotal]);
-
-  console.log(" Después del Efecto");
   return {
     loading,
     error,
@@ -61,5 +56,6 @@ export const useTodos = () => {
     deleteTodo,
     openModal,
     setOpenModal,
+    syncronizeTodos
   };
 };
