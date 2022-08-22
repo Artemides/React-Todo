@@ -1,0 +1,55 @@
+.Alert-container{
+    width: 30%;
+    height: 25%;
+    background-color: rgb(53, 35, 97);
+    box-shadow: 1px 1px 10px 1px black;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Alert-container p {
+    color: rgb(99, 96, 96);
+    background-color: #10d663;
+    border-radius: 1rem;
+    padding: .25rem;
+    text-align: center;
+    font-size: .75rem;
+    font-weight: bold;
+    animation: AlertReload 1s linear infinite;
+
+}
+.Alert-container button{
+    border: none;
+    background-color: transparent;
+}
+.Alert-container button:hover{
+    cursor: pointer;
+}
+.Alert-reload{
+    width: 5rem;
+    height: 5rem;
+    fill: #6a21f0 ;
+}
+@keyframes AlertReload{
+    0%{
+        transform: rotate();
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes AlertButtonTurn{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+

@@ -1,12 +1,20 @@
-
 import { WithStorageEvent } from "../ChangeAlert/withStorageEvent";
+import { Modal } from "../App/Modal";
+import { IoReload } from 'react-icons/io5';
+import {MdPublishedWithChanges} from 'react-icons/md'
+import "../ChangeAlert/ChangeAlert.css"
+
 const ChangeAlert = ({ show, toggleShow }) => {
   if (show) {
     return (
-      <div>
-        <p>¿Hubo Cambios?</p>
-        <button onClick={() => toggleShow(false)}>Reload Page</button>
-      </div>
+      <Modal>
+        <div className="Alert-container">
+          <button onClick={() => toggleShow(false)}>
+            <MdPublishedWithChanges className="Alert-reload"/>
+          </button>
+          <p>Hay nuevos cambios en la Aplicación</p>
+        </div>
+      </Modal>
     );
   } else {
     return null;

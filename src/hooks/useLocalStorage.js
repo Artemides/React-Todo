@@ -33,6 +33,7 @@ export const useLocalStorage=(itemName, initialValue)=> {
       }
     };
     const syncronize=()=>{
+      setItem([]);
       setLoading(true);
       setSyncItems(false);
     }

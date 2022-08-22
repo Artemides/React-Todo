@@ -5,6 +5,7 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 export const useTodos = () => {
   const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
+  const [openModalAlertStorage, setOpenModalAlertStorage] = React.useState(false);
   const {
     item: todos,
     saveItem: saveTodos,
@@ -56,6 +57,8 @@ export const useTodos = () => {
     deleteTodo,
     openModal,
     setOpenModal,
-    syncronizeTodos
+    syncronizeTodos,
+    openModalAlertStorage,
+    setOpenModalAlertStorage
   };
 };

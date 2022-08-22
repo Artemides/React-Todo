@@ -5,15 +5,15 @@ export const WithStorageEvent = (WrappedComponent) => {
     const [storageStatus, setStorageStatus] = useState(false);
     window.addEventListener('storage',(changes)=>{
         if(changes.key==='todos_v1'){
-            setStorageStatus(true)
+          setStorageStatus(true);
         }
     })
     const toggleShow=()=>{
         props.syncronize();
-        setStorageStatus(false)
+        setStorageStatus(false);
     }
     return (
-      <WrappedComponent show={storageStatus} toggleShow={toggleShow} />
+      <WrappedComponent show={storageStatus} toggleShow={toggleShow}/>
     );
   };
 };

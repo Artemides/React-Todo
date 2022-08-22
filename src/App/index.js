@@ -11,8 +11,8 @@ import { TodosError } from "../TodosError";
 import { TodosLoading } from "../TodosLoading";
 import { EmptyTodos } from "../EmptyTodos";
 import { TodoHeader } from "../TodoHeader";
-import {useTodos} from "../hooks/useTodos";
-import {ChangeAlertWithStorageEvent} from "../ChangeAlert"
+import { useTodos } from "../hooks/useTodos";
+import { ChangeAlertWithStorageEvent } from "../ChangeAlert";
 function App() {
   const {
     error,
@@ -27,7 +27,9 @@ function App() {
     search,
     setSearch,
     addTodo,
-    syncronizeTodos
+    syncronizeTodos,
+    openModalAlertStorage,
+    setOpenModalAlertStorage,
   } = useTodos();
   return (
     <React.Fragment>
@@ -37,13 +39,15 @@ function App() {
       </TodoHeader>
       <TodoList
         error={error}
-        onError={()=><TodosError error={"error"}/>}
+        onError={() => <TodosError error={"error"} />}
         loading={loading}
-        onLoading={index=><TodosLoading key={index}/>}
-        onEmptyTodos={()=><EmptyTodos/>}
+        onLoading={(index) => <TodosLoading key={index} />}
+        onEmptyTodos={() => <EmptyTodos />}
         search={search}
         totalTodos={TodoTotal}
-        onNotFound={(searchedText)=>(<p>No hay resultados para "{searchedText}" 😓</p>)}
+        onNotFound={(searchedText) => (
+          <p>No hay resultados para "{searchedText}" 😓</p>
+        )}
         searchedTodos={searchedTodos}
         // render={(todo,index)=>(
         //   <TodoItem
@@ -54,9 +58,8 @@ function App() {
         //     onDelete={() => deleteTodo(todo.text)}
         //   />
         // )}
-
       >
-        {(todo,index)=>(
+        {(todo, index) => (
           <TodoItem
             key={index}
             text={todo.text}
@@ -72,11 +75,12 @@ function App() {
         </Modal>
       )}
       <TodoButtonCreate setOpenModal={setOpenModal} openModal={openModal} />
-    <ChangeAlertWithStorageEvent
-      syncronize={syncronizeTodos}
-    />
+      <ChangeAlertWithStorageEvent
+        syncronize={syncronizeTodos}
+        setOpenModalAlertStorage={setOpenModalAlertStorage}
+        openModalAlertStorage={openModalAlertStorage}
+      />
     </React.Fragment>
-
   );
 }
 
